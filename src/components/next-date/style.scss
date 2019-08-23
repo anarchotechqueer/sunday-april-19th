@@ -3,9 +3,11 @@
 .next-date {
   @include font-styles;
   display: flex;
+  margin-top: $spacing;
 
   @include wide {
-    margin-left: 40px;
+    margin-left: $spacing-big;
+    margin-top: 0;
   }
 
   &__accent {
