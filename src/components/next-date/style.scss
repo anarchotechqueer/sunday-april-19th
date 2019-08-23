@@ -1,0 +1,10 @@
+@import '../../variables';
+
+.next-date {
+  @include font-styles;
+
+  &__accent {
+    color: $color-main;
+    font-weight: 500;
+  }
+}
