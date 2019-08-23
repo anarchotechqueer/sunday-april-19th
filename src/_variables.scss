@@ -1,0 +1,51 @@
+$font: 'Roboto Mono', cursive;
+
+$color-dark: #292F36;
+$color-main: #F9CAE0;
+
+$screen-wide: 1000px;
+
+@mixin marginless {
+  margin: 0;
+}
+
+@mixin font-styles {
+  @include selection;
+  font-family: $font;
+  font-weight: 300;
+  font-size: 14px;
+  color: $color-dark;
+  line-height: 1.3;
+  letter-spacing: .2em;
+}
+
+@mixin container {
+  width: calc(100% - 40px);
+  margin-left: auto;
+  margin-right: auto;
+
+  @include wide {
+    width: calc(100% - 80px);
+  }
+}
+
+@mixin wide {
+  @media (min-width: $screen-wide) {
+    @content;
+  }
+}
+
+@mixin accent {
+  @include selection($color-dark);
+  color: $color-main;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+@mixin selection($color: $color-dark, $border-color: transparent) {
+  &::selection {
+    color: $color;
+    background: $color-main;
+    border-bottom-color: $border-color;
+  }
+}

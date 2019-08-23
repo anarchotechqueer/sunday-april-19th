@@ -1,0 +1,29 @@
+@import 'variables';
+
+body {
+  margin: 0;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100vw;
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+}
+
+a {
+  @include selection();
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid $color-main;
+}
