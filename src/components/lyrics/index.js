@@ -4,8 +4,7 @@ import './style.scss';
 export default function Lyrics() {
   return (
     <blockquote>
-    <pre className='lyrics'>{`
-when you were a child on the farm
+    <pre className='lyrics'>{`when you were a child on the farm
 you saw him pin her by the weight of his arms
 so she left in the night when you were in bed
 and took your trust when she left
