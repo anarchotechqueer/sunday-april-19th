@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './app.scss';
 
 import Lyrics   from './components/lyrics';
@@ -28,7 +27,7 @@ class App extends React.Component {
     while (!foundDate) {
       target.setFullYear(targetYear, targetMonth, targetDate);
       // document.write(target);
-      if (target.getDay() === 0) {
+      if (target.getDay() === targetDay) {
         foundDate = true;
       }
       else {
@@ -36,7 +35,7 @@ class App extends React.Component {
       }
     }
 
-    let targetText = targetYear == today.getFullYear() ? 'this year!' : `in ${targetYear}`;
+    let targetText = targetYear === today.getFullYear() ? 'this year!' : `in ${targetYear}`;
 
     this.setState({
       nextOccurrence: targetText
