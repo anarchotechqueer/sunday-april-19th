@@ -2,9 +2,15 @@
 
 .next-date {
   @include font-styles;
+  display: flex;
+
+  @include wide {
+    margin-left: 40px;
+  }
 
   &__accent {
     color: $color-main;
     font-weight: 500;
+    margin-right: 10px;
   }
 }
