@@ -4,8 +4,7 @@
   @include container;
   @include font-styles;
   display: flex;
-  padding: $spacing-mini 0;
-  margin-top: $spacing-mini;
+  padding: 10px 0;
 
   @include wide {
     justify-content: center;
