@@ -1,13 +1,21 @@
-const express = require('express'); 
-const request = require('request');
+const express = require('express');
+const favicon = require('express-favicon');
+const path = require('path');
 const chalk = require('chalk');
 const talk = chalk.hex("F9CAE0")
 
 const app = express();
-const port = process.env.PORT || 5000;
+app.use(favicon(__dirname + '/build/logo.png'));
+const port = process.env.PORT || 8080;
 
-app.set('view engine', 'ejs');
 app.use(express.static(__dirname));
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, 'build')));
+  app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  });  
+}
 
 app.get('/api/nextOccurrence/', (req, res) => {
   let foundDate = false;
