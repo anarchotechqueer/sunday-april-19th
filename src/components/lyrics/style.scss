@@ -1,32 +1,26 @@
 @import '../../variables';
 
 blockquote {
-  // position: absolute;
-  // top: 50%;
-  // transform: translateY(-50%);
+  @include marginless;
   width: 100%;
 
-  @include marginless;
-  
   @include wide {
     @include marginless;
     width: auto;
-    // left: 40px;
   }
 }
 
 pre {
   @include marginless;
-  // @include container;
   @include font-styles;
   white-space: pre-wrap;
 
-  border-left: 1px solid $color-main;
-  padding-left: 20px;
+  border-left: $border-width solid $color-main;
+  padding-left: $spacing;
 
   @include wide {
     @include marginless;
     width: 100%;
-    padding-left: 40px;
+    padding-left: $spacing-big;
   }
 }
