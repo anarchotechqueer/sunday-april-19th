@@ -2,8 +2,9 @@ import React from 'react';
 import logo from './logo.svg';
 import './app.scss';
 
-import Lyrics from './components/lyrics';
+import Lyrics   from './components/lyrics';
 import NextDate from './components/next-date';
+import Footer   from './components/footer';
 
 class App extends React.Component {
   constructor(props) {
@@ -40,27 +41,26 @@ class App extends React.Component {
     this.setState({
       nextOccurrence: targetText
     })
-
   }
 
   componentDidMount() {
     this.calculateNextOccurrence();
-
   }
 
   render() {
     return (
-      <div className="app">
-
-        { this.state.nextOccurrence && (
-          <>
-            <Lyrics />
-            <NextDate {...this.state} />
-          </>
-          )
-        }
-        
-      </div>
+      <>
+        <div className="app">
+          { this.state.nextOccurrence && (
+            <>
+              <Lyrics />
+              <NextDate {...this.state} />
+            </>
+            )
+          }
+        </div>
+        <Footer />
+      </>
     );
   }
 }

@@ -1,0 +1,19 @@
+@import '../../variables';
+
+.footer {
+  @include container;
+  @include font-styles;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  
+  @include wide {
+    margin-left: 40px;
+  }
+
+  &__accent {
+    color: $color-main;
+    font-weight: 500;
+    margin-right: 10px;
+  }
+}

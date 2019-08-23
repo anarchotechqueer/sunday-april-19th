@@ -21,7 +21,7 @@ pre {
   @include font-styles;
   white-space: pre-wrap;
 
-  border-left: 2px solid $color-main;
+  border-left: 1px solid $color-main;
   padding-left: 20px;
 
   @include wide {
