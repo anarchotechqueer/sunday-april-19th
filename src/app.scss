@@ -2,10 +2,10 @@
 
 .app {
   @include container;
-  height: calc(100% - 40px);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  flex-grow: 1;
 
   @include wide {
     flex-direction: row;
