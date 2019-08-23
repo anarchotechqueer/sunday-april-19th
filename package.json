@@ -2,11 +2,6 @@
   "name": "sunday-april-19th",
   "version": "0.1.0",
   "private": true,
-<<<<<<< HEAD
-  "main": "index.js",
-  "proxy": "http://localhost:8080/",
-=======
->>>>>>> parent of c376856... move occurrence calculation to simple node server
   "engines": {
     "npm": "6.9.0",
     "node": "10.15.3"
