@@ -1,0 +1,17 @@
+$font: 'Roboto Mono', monospace;
+
+$color-dark: #292F36;
+$color-lite: #FFFDF7;
+
+@mixin marginless {
+	margin: 0;
+}
+
+@mixin font-styles {
+	font-family: $font;
+	color: $color-dark;
+	font-size: 14px;
+	line-height: 1.3;
+	letter-spacing: .2em;
+
+}
