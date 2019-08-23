@@ -10,6 +10,7 @@ $screen-wide: 1000px;
 }
 
 @mixin font-styles {
+  @include selection;
   font-family: $font;
   font-weight: 300;
   font-size: 14px;
@@ -31,5 +32,20 @@ $screen-wide: 1000px;
 @mixin wide {
   @media (min-width: $screen-wide) {
     @content;
+  }
+}
+
+@mixin accent {
+  @include selection($color-dark);
+  color: $color-main;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+@mixin selection($color: $color-dark, $border-color: transparent) {
+  &::selection {
+    color: $color;
+    background: $color-main;
+    border-bottom-color: $border-color;
   }
 }

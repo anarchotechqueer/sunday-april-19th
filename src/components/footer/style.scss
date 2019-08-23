@@ -11,8 +11,10 @@
   }
 
   &__accent {
-    color: $color-main;
-    font-weight: 500;
-    margin-right: 10px;
+    @include accent;
+  }
+
+  &__text {
+    @include selection;
   }
 }
