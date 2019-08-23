@@ -3,8 +3,14 @@ body {
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100vw;
+  height: 100vh;
 }
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#root {
+  height: 100vh;
 }

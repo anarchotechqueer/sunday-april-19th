@@ -1,9 +1,9 @@
 @import '../../variables';
 
 blockquote {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  // position: absolute;
+  // top: 50%;
+  // transform: translateY(-50%);
   width: 100%;
 
   @include marginless;
@@ -11,13 +11,13 @@ blockquote {
   @include wide {
     @include marginless;
     width: auto;
-    left: 40px;
+    // left: 40px;
   }
 }
 
 pre {
   @include marginless;
-  @include container;
+  // @include container;
   @include font-styles;
   white-space: pre-wrap;
 

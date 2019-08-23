@@ -1,0 +1,14 @@
+@import 'variables';
+
+.app {
+  @include container;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  @include wide {
+    flex-direction: row;
+    align-items: center;
+  }
+}

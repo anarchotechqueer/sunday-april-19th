@@ -22,6 +22,10 @@ $screen-wide: 1000px;
   width: calc(100% - 40px);
   margin-left: auto;
   margin-right: auto;
+
+  @include wide {
+    width: calc(100% - 80px);
+  }
 }
 
 @mixin wide {

@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './app.scss';
 
 import Lyrics from './components/lyrics';
 import NextDate from './components/next-date';
