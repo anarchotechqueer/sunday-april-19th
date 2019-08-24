@@ -5,17 +5,18 @@ const chalk = require('chalk');
 const talk = chalk.hex("F9CAE0")
 
 const app = express();
-app.use(favicon(__dirname + '/build/logo.png'));
+
 const port = process.env.PORT || 8080;
 
 app.use(express.static(__dirname));
 
 if (process.env.NODE_ENV === "production") {
-  const prodPath = '../client/build';
+  const prodPath = '/client/build/';
+  app.use(favicon(__dirname + `${prodPath}/logo.png`));
 
   app.use(express.static(path.join(__dirname, prodPath)));
   app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname, prodPath, 'index.html'));
+    res.sendFile(path.join(__dirname, `${prodPath}index.html`));
   });  
 }
 
