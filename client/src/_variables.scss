@@ -5,6 +5,12 @@ $color-main: #F9CAE0;
 
 $screen-wide: 1000px;
 
+$spacing: 20px;
+$spacing-mini: $spacing / 2;
+$spacing-big: $spacing * 2;
+
+$border-width: 1px;
+
 @mixin marginless {
   margin: 0;
 }
@@ -20,12 +26,12 @@ $screen-wide: 1000px;
 }
 
 @mixin container {
-  width: calc(100% - 40px);
+  width: calc(100% - #{$spacing-big});
   margin-left: auto;
   margin-right: auto;
 
   @include wide {
-    width: calc(100% - 80px);
+    width: calc(100% - #{$spacing-big * 2});
   }
 }
 
@@ -39,7 +45,7 @@ $screen-wide: 1000px;
   @include selection($color-dark);
   color: $color-main;
   font-weight: 500;
-  margin-right: 10px;
+  margin-right: $spacing-mini;
 }
 
 @mixin selection($color: $color-dark, $border-color: transparent) {

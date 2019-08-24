@@ -25,5 +25,5 @@ a {
   @include selection();
   text-decoration: none;
   color: inherit;
-  border-bottom: 1px solid $color-main;
+  border-bottom: $border-width solid $color-main;
 }
