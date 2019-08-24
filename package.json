@@ -14,7 +14,7 @@
     "start": "node server",
     "installFiles": "concurrently \"npm install\" \"cd client && npm install\"",
     "dev": "concurrently --kill-others \"node server\" \"cd client && npm start\"",
-    "heroku-postinstall": "cd client && npm install && npm run build"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
