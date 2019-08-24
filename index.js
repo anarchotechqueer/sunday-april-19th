@@ -11,7 +11,7 @@ const port = process.env.PORT || 8080;
 app.use(express.static(__dirname));
 
 if (process.env.NODE_ENV === "production") {
-  const prodPath = 'client/build';
+  const prodPath = '../client/build';
 
   app.use(express.static(path.join(__dirname, prodPath)));
   app.get('/*', function (req, res) {
