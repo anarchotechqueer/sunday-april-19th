@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 import './app.scss';
 
 import Lyrics   from './components/lyrics';
@@ -44,6 +45,8 @@ class App extends React.Component {
 
   componentDidMount() {
     this.calculateNextOccurrence();
+    ReactGA.initialize('UA-146420413-1');
+    ReactGA.pageview('/');
   }
 
   render() {
