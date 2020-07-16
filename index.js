@@ -16,10 +16,10 @@ app.get('/api/nextOccurrence/', (req, res) => {
   const targetDate = 19; // 19th
   const targetDay = 0; // sunday
   const today = new Date();
-  let targetYear = (targetMonth <= today.getMonth() && targetDate <= today.getDate()) ? today.getFullYear() : today.getFullYear() + 1;
-  
+  let targetYear = targetMonth > today.getMonth() ? today.getFullYear() : today.getFullYear() + 1;
+
   let target = new Date();
-  
+
   while (!foundDate) {
     target.setFullYear(targetYear, targetMonth, targetDate);
     if (target.getDay() === targetDay) {
@@ -46,7 +46,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, prodPath)));
   app.get('/*', function (req, res) {
     res.sendFile(path.join(__dirname, `${prodPath}index.html`));
-  });  
+  });
 }
 
 app.listen(port, () => console.log(talk.bold(`listening on port ${port}`)));
