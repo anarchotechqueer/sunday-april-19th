@@ -10,19 +10,9 @@ const port = process.env.PORT || 8080;
 
 app.use(express.static(__dirname));
 
-if (process.env.NODE_ENV === "production") {
-  const prodPath = '/client/build/';
-  app.use(favicon(__dirname + `${prodPath}/logo.png`));
-
-  app.use(express.static(path.join(__dirname, prodPath)));
-  app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname, `${prodPath}index.html`));
-  });
-}
-
 app.get('/api/nextOccurrence/', (req, res) => {
   let foundDate = false;
-  const targetMonth = 3; // april
+  const targetMonth = 3; // April
   const targetDate = 19; // 19th
   const targetDay = 0; // sunday
   const today = new Date();
@@ -48,5 +38,15 @@ app.get('/api/nextOccurrence/', (req, res) => {
 
   res.send(response);
 });
+
+if (process.env.NODE_ENV === "production") {
+  const prodPath = '/client/build/';
+  app.use(favicon(__dirname + `${prodPath}/logo.png`));
+
+  app.use(express.static(path.join(__dirname, prodPath)));
+  app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname, `${prodPath}index.html`));
+  });
+}
 
 app.listen(port, () => console.log(talk.bold(`listening on port ${port}`)));
